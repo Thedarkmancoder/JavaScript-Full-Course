@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+<body>
+    <h1>function part 2</h1>
+    <script>
+    function determineDriveStatus(){
+         let age = 24;
+         let status;
+         if(age === undefined){
+            return 'App Avtaar hai';
+         }
+         console.log('Checking drive status');
+
+         if (age > 18){
+            return ' You can Drive';
+         }else {
+            return ' Use a BiCycle ';
+         }
+    }
+    console.log(determineDriveStatus());
+    </script>
+</body>
+</html>
