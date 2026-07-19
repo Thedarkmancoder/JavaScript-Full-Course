@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autoboxing</title>
+</head>
+<body>
+    <h1>Autoboxing</h1>
+    <script>
+        console.log('this is nitish' . length);
+        console.log('this is nitish' . toUpperCase());
+        console.log('this is nitish' . toLocaleLowerCase());
+        console.log('this is a nitish' . replace('a', ' nitish  '));
+// and so on
+
+// object References(next topic)
+// object work based on references, not actual data.
+let a = 5;
+let b = a;
+console.log(`${a}, ${b}`);
+a = 8;
+console.log(` a =${a}, b = ${b}`);
+
+// copying an object copies the reference, not the actual object.
+let x = {num : 5};
+let y = x;
+console.log(`x =${x.num}, y = ${y.num}`);
+x.name = 8;
+console.log(`x =${x.num}, y = ${y.num}`);
+
+// when comparing with == you are comparing references, not content.
+ let p ={pop : 'lujh'};
+let q ={pop : 'lujh'};
+console.log(p == q);
+// note : changes to one reference affects all copies.
+
+// last topic object
+    // de -structuring.  note : we can extract more than one property at once.
+let product = {
+    company : 'Mango ',
+    price : 899,
+    item_name : 'T-Shirt',
+};
+ let {company} = product;
+ console.log(company);
+
+ //property shorthand
+let price = 861;
+let product1 = {
+    company : 'Mango',
+    item_name : 'cotton',
+    price : price
+};
+//is same as
+let product2 = {
+    company : 'Mango',
+    item_name : 'cotton',
+    price
+};
+//method shorthand
+let product3 = {
+    company : 'Mango',
+    item_name : 'cotton',
+    displayPrice : function(){
+        return `$${this.price.toFixed(2)}`;
+}
+};
+// is same as
+let product4 = {
+    company: 'Mango',
+    item_name : 'cotton',
+    displayPrice(){
+        return `$${this.price.toFixed(2)}`;
+    }
+};
+   </script>
+</body>
+</html>
