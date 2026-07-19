@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> object part2</title>
+</head>
+<body>
+    <h1> object part 2</h1>
+    <script>
+        //inside object
+        let product = {
+            company : 'Mango',
+            price : 999,
+            item_name : 'T-Shirt',
+            displayPrice : function() {
+    console.log(`price of the product is ${this.price}`);
+            }
+        };
+         product.displayPrice();
+    </script>
+</body>
+</html>
