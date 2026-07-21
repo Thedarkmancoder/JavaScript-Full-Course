@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice 1</title>
+    <style>
+        #my-button{
+            height: 50px;
+            width: 50px;
+            font-size: 25px;
+            border: none;
+            border-radius: 5px;
+        }
+        .js-odd{
+            background-color: chocolate;
+        }
+        .js-even{
+            background-color: lawngreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Practice Exercise
+    </h1>
+    <h2>
+        JSON , <br>Local storage , <br> Date & DOM. <br>
+    </h2>
+    <h3>
+        1. Display good morning, afternoon and night based on current hour. <br>
+        2. Add the name to the output too. <br>
+        3. Create a Button which shows the number how many times
+            it has been pressed. <br>
+            . Also, it has different colors for when it has been pressed odd or even times. <br>
+            . The click count should also survive browser refresh.    
+    </h3>
+     <h1 id="greeting"> </h1>
+    
+    <button id="my-button" onclick="buttonPressed()">
+        0   
+    </button>
+     <script>
+        let numberOfTimesClicked = localStorage.getItem('numberOfTimeClicked') || 0;
+        function buttonPressed(){
+        numberOfTimesClicked++;
+        localStorage.setItem('numberOfTimeClicked' ,numberOfTimesClicked);
+          updateButton();
+        }
+
+        function updateButton(){
+              let button = document.querySelector('#my-button');
+            if(numberOfTimesClicked % 2 === 0){
+                button.classList.remove('js-odd');
+                button.classList.add('js-even');
+            }else{
+                button.classList.remove('js-even');
+                button.classList.add('js-odd');
+            }
+            button.innerText = numberOfTimesClicked;
+        }
+        updateButton();
+
+
+
+
+        function doGreeting(personName = 'Dear'){
+            let date = new Date();
+    // let hours = date.getHours();
+    let hours = 10;
+    let heading = document.querySelector('#greeting');
+    if(hours >5 && hours < 12){
+        heading.innerText = `GOOD MORNING ${personName}`;
+    }else if (hours > 12 && hours < 18){
+        heading.innerText = `GOOD AFTERNOON ${personName}`;
+    }else {
+        heading.innerText = `GOOD NIGHT ${personName}` ;
+    }
+        }
+doGreeting('NITISH');
+    
+    
+</script>
+</body>
+</html>
